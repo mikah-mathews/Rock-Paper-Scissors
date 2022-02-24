@@ -32,7 +32,7 @@ namespace Fight.Models
       }
       else
       {
-        return "Invalid input";
+        return "Invalid Input";
       }
 
     }

@@ -38,7 +38,35 @@ namespace Fight.Tests
 
     }
 
+    [TestMethod]
+    public void Compare_Player2Wins_String()
+    {
+      string player1Input = "scissors";
+      string player2Input = "rock";
+      Game newGame = new Game(player1Input, player2Input);
+      string result = Game.Compare(player1Input, player2Input);
+      Assert.AreEqual(result, "Player 2 wins!");
+    }
 
-    
+    [TestMethod]
+    public void Compare_Tie_String()
+    {
+      string player1Input = "scissors";
+      string player2Input = "scissors";
+      Game newGame = new Game(player1Input, player2Input);
+      string result = Game.Compare(player1Input, player2Input);
+      Assert.AreEqual(result, "It's a tie!");
+    }
+
+    [TestMethod]
+    public void Compare_Invalid_String()
+    {
+      string player1Input = "scissors";
+      string player2Input = "panda";
+      Game newGame = new Game(player1Input, player2Input);
+      string result = Game.Compare(player1Input, player2Input);
+      Assert.AreEqual(result, "Invalid Input"); 
+    }
+
   }
 }
